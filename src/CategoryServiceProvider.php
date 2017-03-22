@@ -39,15 +39,26 @@ class CategoryServiceProvider extends ServiceProvider
             // Load migrations
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-            // Publish migrations
-            $this->publishes([
-                realpath(__DIR__.'/../database/migrations') => database_path('migrations'),
-            ], 'migrations');
-
-            // Publish config
-            $this->publishes([
-                realpath(__DIR__.'/../config/config.php') => config_path('rinvex.category.php'),
-            ], 'config');
+            // Publish Resources
+            $this->publishResources();
         }
+    }
+
+    /**
+     * Publish resources.
+     *
+     * @return void
+     */
+    protected function publishResources()
+    {
+        // Publish config
+        $this->publishes([
+            realpath(__DIR__.'/../config/config.php') => config_path('rinvex.category.php'),
+        ], 'config');
+
+        // Publish migrations
+        $this->publishes([
+            realpath(__DIR__.'/../database/migrations') => database_path('migrations'),
+        ], 'migrations');
     }
 }
