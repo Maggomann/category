@@ -219,7 +219,7 @@ $category = Category::find(1);
 $category->setTranslation('name', 'en', 'Name in English');
 
 // Get category translation
-$category->setTranslation('name', 'en');
+$category->getTranslation('name', 'en');
 
 // Get category name in default locale
 $category->name;
