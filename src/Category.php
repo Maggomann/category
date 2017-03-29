@@ -155,7 +155,7 @@ class Category extends Model
     {
         return $this->morphedByMany($class, 'categorizable', config('rinvex.category.tables.categorizables'), 'category_id', 'categorizable_id');
     }
-    
+
     /**
      * Enforce clean slugs.
      *
