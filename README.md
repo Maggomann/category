@@ -359,7 +359,6 @@ $category = Category::create([
     'name' => [
         'en' => 'New Category Name',
     ],
-
     'children' => [
         [
             'name' => [
