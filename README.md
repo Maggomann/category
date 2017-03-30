@@ -359,13 +359,17 @@ $category = Category::create([
     'name' => [
         'en' => 'New Category Name',
     ],
-
     'children' => [
         [
-            'name' => 'Bar',
-
+            'name' => [
+                'en' => 'Bar',
+            ],
             'children' => [
-                [ 'name' => 'Baz' ],
+                [
+                    'name' => [
+                        'en' => 'Baz',
+                    ],
+                ],
             ],
         ],
     ],
